@@ -60,7 +60,9 @@
     }
 
     section{
+        background: rgba(255,255,255,0.89);
         padding: 24px 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .hero h1{
@@ -76,6 +78,11 @@
     .career-date{
         width: auto;
     }
+    
+    .project-card{
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
 }
 
 .hero{
@@ -96,13 +103,6 @@
     opacity: 0.8;
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fb;
-    color: #222;
-    margin: 0;
-    padding: 0;
-} */
 body{
     font-family: 'Poppins', sans-serif;
     background-image: url("/static/portfolio/p0519_m.jpg");
@@ -113,12 +113,7 @@ body{
     margin: 0;
     padding: 0;
 }
-/* header {
-    background-color: #1e293b;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-} */
+
 
 main {
     max-width: 1900px;
