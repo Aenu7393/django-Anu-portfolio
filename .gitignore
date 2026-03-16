@@ -1,4 +1,11 @@
-venv/
 __pycache__/
+*.py[cod]
 db.sqlite3
-*.pyc
+.env
+venv/
+.venv/
+*.log
+staticfiles/
+media/
+*.json
+!.vscode/settings.json

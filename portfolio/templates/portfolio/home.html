@@ -3,45 +3,149 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Daigo Namiki Portfolio</title>
     <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>並木大悟のポートフォリオ</h1>
-        <p>AI・機械学習・研究開発</p>
+    <header class="hero">
+        <h1>Daigo Namiki</h1>
+        <p class="subtitle">AI Research / Backend Engineer</p>
     </header>
+    <!-- <header>
+        <h1>portfolio</h1>
+        
+    </header> -->
 
     <main>
         <section>
-            <h2>自己紹介</h2>
-            <p>
-                東北大学大学院でAI関連の研究を行う予定です。
-                Neural Architecture Search や Quantum Annealing に興味があります。
-            </p>
+            <div class="profile">
+
+                <div class="left">
+                    <h2>自己紹介</h2>
+                    <p>
+                        氏名：<span class="highlight">並木大悟</span><br>
+                        所属：<span class="highlight">
+                            東北大学大学院 情報科学研究科 応用情報科学専攻 山田研究室
+                        </span>
+                    </p>
+                </div>
+
+                <div class="right">
+                    <h2>学歴・職歴</h2>
+                    <div class="career">
+
+                        <div class="career-row">
+                            <div class="career-date">2019/4～2022/3</div>
+                            <div class="career-text">神奈川県立秦野高等学校 卒業</div>
+                        </div>
+
+                        <div class="career-row">
+                            <div class="career-date">2022/4～2026/3</div>
+                            <div class="career-text">東海大学 情報理工学部 情報科学科 卒業</div>
+                        </div>
+
+                        <div class="career-row">
+                            <div class="career-date">2024/8～2024/9</div>
+                            <div class="career-text">オーストラリアインターン Bush-it</div>
+                        </div>
+
+                        <div class="career-row">
+                            <div class="career-date">2026/4～2028/3 </div>
+                            <div class="career-text">東北大学大学院 情報科学研究科 応用情報科学専攻</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2>スキル</h2>
-            <p>Python / Django / PyTorch / GitHub / 機械学習</p>
+            <div class="profile">
+                <div class="left">
+                    <h2>研究領域</h2>
+                    <p>深層学習・
+                        ニューラルアーキテクチャ探索（NAS）・
+                        組合せ最適化（量子アニーリング）</p>
+                </div>
+
+                <div class="right">
+                    <h2>論文</h2>
+                    <p>
+                    量子アニーリングを用いたニューラルネットワーク構造最適化<br>
+                    </p>
+                    <div class="paper-links">
+                        <a href="{% static 'paper/namikiTokaisoturongaiyou.pdf' %}" target="_blank" rel="noopener noreferrer">
+                            概要PDFを見る
+                        </a>
+
+                        <a href="{% static 'paper/namikiTokaisoturon.pdf' %}" target="_blank" rel="noopener noreferrer">
+                            論文PDFを見る
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section>
+       <section>
             <h2>作品一覧</h2>
 
-            {% for project in projects %}
-                <div style="margin-bottom: 20px;">
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
+            <div class="project-card">
 
-                    {% if project.github_url %}
-                        <p><a href="{{ project.github_url }}" target="_blank">GitHubを見る</a></p>
-                    {% endif %}
+                <div class="project-header">
+                    <h3>eBay在庫管理Webアプリ</h3>
+
+                    <div class="project-meta">
+                        <span>制作期間：2024.09 – 2025.07</span>
+                        <span>公開：Heroku（現在停止）</span>
+                        <span class="status done">開発終了</span>
+                    </div>
                 </div>
-            {% empty %}
-                <p>まだ作品がありません。</p>
-            {% endfor %}
+
+                <p class="project-desc">
+                    複数ECサイトに出品している商品の在庫管理を効率化するために開発した
+                    個人用Webアプリケーション。
+                    Djangoを用いた外部サービス連携や、Heroku Schedulerによる定期実行処理の設計を目的として実装。
+                </p>
+
+                <div class="project-section">
+                    <h4>概要</h4>
+                        <ul>
+                        <li>EC出品ページURLの登録・商品情報スクレイピング</li>
+                        <li>商品情報のGoogleスプレッドシート自動保存</li>
+                        <li>eBay APIによる出品商品情報取得</li>
+                        <li>ECサイト商品とeBay商品の紐づけ管理</li>
+                        <li>売り切れ時のeBay出品自動停止機能</li>
+                        </ul>
+                </div>
+
+                <div class="project-section">
+                    <h4>使用技術</h4>
+                    <div class="tech">
+                        Python / Django / PostgreSQL（本番環境） / SQLite（開発環境） / Google Sheets API / eBay API / Heroku / Heroku Scheduler
+                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/Aenu7393/ebay-support-system" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <section class="contact">
+        <h2>連絡先</h2>
+            <p>
+                Email：anu536373@outlook.jp<br>
+                GitHub：
+                <a href="https://github.com/Aenu7393" target="_blank" rel="noopener noreferrer">
+                    https://github.com/Aenu7393
+                </a><br>
+
+            </p>
         </section>
     </main>
+
 </body>
 </html>
