@@ -126,7 +126,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 #DEBUG = True  # ローカルならTrue
-DEBUG = False #本番ならFalse
+DEBUG = False #本番ならFalse セキュリティ面〇
 
 if DEBUG:
     STATIC_URL = '/static/'
