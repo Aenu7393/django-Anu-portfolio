@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6kiw(k&8s7r99nm^2&vdu#kp!olvw0l((8e62ewp^ufg09rlub'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+
+
 
 ALLOWED_HOSTS = [
     "django-anu-portfolio.onrender.com",
@@ -121,3 +123,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+#DEBUG = True  # ローカルならTrue
+DEBUG = False #本番ならFalse
+
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
+        BASE_DIR / "static",
+    ]
+else:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
